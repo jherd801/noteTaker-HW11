@@ -4,6 +4,7 @@
 // ==============================================================================
 
 var express = require("express");
+var fs = require("fs");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -26,7 +27,7 @@ var PORT = process.env.PORT || 8080;
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-// require("./routes/apiRoutes")(app);
+require("./public/routes/apiRoutes")(app);
 require("./public/routes/htmlRoutes")(app);
 
 
