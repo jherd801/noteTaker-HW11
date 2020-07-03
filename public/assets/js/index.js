@@ -62,8 +62,6 @@ var handleNoteSave = function() {
   });
 };
 
-// ^^^ fs.writeFile here????
-
 
 // Delete the clicked note
 var handleNoteDelete = function(event) {

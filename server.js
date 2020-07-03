@@ -1,19 +1,19 @@
 var express = require("express");
-var fs = require("fs");
 
 var app = express();
 
 // Setting the PORT
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3030;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-// Link to API and HTML route files
-require("./public/routes/apiRoutes")(app);
-require("./public/routes/htmlRoutes")(app);
+// // API and HTML routes
+app.use(require("./routes/apiRoutes.js"));
+app.use(require("./routes/htmlRoutes.js"));
+
 
 // Listener to start server
 app.listen(PORT, function() {
